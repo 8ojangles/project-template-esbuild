@@ -1,0 +1,32 @@
+{
+  "name": "project-template-esbuild",
+  "version": "1.0.0",
+  "description": "Template project using esbuild",
+  "main": "index.js",
+  "scripts": {
+    "test": "test",
+    "build": "node esbuild/esbuild.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/8ojangles/project-template-esbuild.git"
+  },
+  "keywords": [
+    "Project.",
+    "esbuild",
+    "sass",
+    "scss",
+    "typescript",
+    "documentation"
+  ],
+  "author": "Simon Papanicolaou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/8ojangles/project-template-esbuild/issues"
+  },
+  "homepage": "https://github.com/8ojangles/project-template-esbuild#readme",
+  "devDependencies": {
+    "esbuild": "0.20.2",
+    "esbuild-sass-plugin": "^3.2.0"
+  }
+}
