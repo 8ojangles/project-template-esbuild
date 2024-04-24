@@ -1,4 +1,5 @@
 import {sassPlugin} from 'esbuild-sass-plugin';
+import htmlPlugin from '@chialab/esbuild-plugin-html';
 
 export function createBuildSettings(options) {
     return {
@@ -7,9 +8,10 @@ export function createBuildSettings(options) {
         outdir: './dist/',
         bundle: true,
         allowOverwrite: true,
-        plugins: [sassPlugin()],
+        plugins: [htmlPlugin(), sassPlugin()],
         minify: true,
         sourcemap: true,
+        assetNames: '[name]',
         target: ['chrome58', 'firefox57', 'safari11', 'edge16'],
         ...options
     };

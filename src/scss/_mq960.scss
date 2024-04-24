@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @media only screen and (max-width: 960px) {
 	.panel--wrapper {
 		width: 100%;
@@ -35,7 +37,7 @@
 			flex-wrap: wrap;
 			width: 45%;
 			justify-content: initial;
-			margin-bottom: $standard-spacing/2;
+			margin-bottom: math.div($standard-spacing, 2);
 			padding-bottom: 0;
 			.info--detail {
 				margin-left: 0.5rem;
