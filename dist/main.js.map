@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["../src/main.js"],
-  "sourcesContent": ["console.log('test');"],
-  "mappings": "MAAA,QAAQ,IAAI,MAAM",
+  "sourcesContent": ["console.log('test new change');"],
+  "mappings": ";MAAA,QAAQ,IAAI,iBAAiB",
   "names": []
 }

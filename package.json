@@ -3,9 +3,13 @@
   "version": "1.0.0",
   "description": "Template project using esbuild",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "test",
-    "build": "node esbuild/esbuild.mjs"
+    "build": "node esbuild/esbuild.js",
+    "start": "node esbuild/serve.js",
+    "watch": "node esbuild/serve.js --watch --servedir=dist",
+    "analyze": "node esbuild/analyse.js"
   },
   "repository": {
     "type": "git",
