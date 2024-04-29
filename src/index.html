@@ -1,16 +1,22 @@
-<html>
-<head>
-    <link rel="stylesheet" href="./scss/main.css" />
-</head>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>ESBuild project template</title>
+        <link rel="stylesheet" href="./scss/main.css" />
+    </head>
     <body>
         <main>
-            <div class="test-container">
-                <div>
-                    <p>Now we are moving</p>
-                    <p>Moving far faster than before</p>
+            <div class="page page--wrapper">
+                {% include "./templates/header.html" %}
+                <div class="test-container">
+                    <div>
+                        <p>Now we are moving</p>
+                        <p>Moving far faster than before, sort of, getting there. Not yet. Another test again, and again four six times</p>
+                    </div>
                 </div>
             </div>
         </main>
-        <script src="./main.js"></script>
+        <script src="./js/main.js"></script>
     </body>
 </html>

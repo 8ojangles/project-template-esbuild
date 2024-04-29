@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/templates/header.html"],
+  "sourcesContent": ["<div class=\"page page--wrapper\">\r\n    <p>next we have to work out how to deal with data in nunjucks! and stopping. Still works and it does</p>\r\n</div>"],
+  "mappings": ";MAAA,IAAAA,EAAA",
+  "names": ["header_default"]
+}
