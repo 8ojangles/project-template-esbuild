@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../src/js/utils.js", "../../src/js/main.js"],
+  "sourcesContent": ["function aTestFunction(a, b) {\r\n    if (!a || !b) {\r\n        console.log('fN requires 2 numbers');\r\n        return;\r\n    }\r\n    return a + b;\r\n}\r\n\r\nexport { aTestFunction };", "import { aTestFunction } from './utils';\r\n\r\nconsole.log('test new change');\r\nconsole.log('test reloading for js with imported code');\r\n\r\nconst answer = aTestFunction(10, 12);\r\nconsole.log('answer: ', answer);"],
+  "mappings": ";MAAA,SAASA,EAAcC,EAAGC,EAAG,CACzB,GAAI,CAACD,GAAK,CAACC,EAAG,CACV,QAAQ,IAAI,uBAAuB,EACnC,MACJ,CACA,OAAOD,EAAIC,CACf,CCJA,QAAQ,IAAI,iBAAiB,EAC7B,QAAQ,IAAI,0CAA0C,EAEtD,IAAMC,EAASC,EAAc,GAAI,EAAE,EACnC,QAAQ,IAAI,WAAYD,CAAM",
+  "names": ["aTestFunction", "a", "b", "answer", "aTestFunction"]
+}

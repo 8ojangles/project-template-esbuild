@@ -18,7 +18,11 @@ $red-dark: #660000;
 $red-darkest: #330000;
 
 // blues
-$blue-medium: #0055ff;
+$blue-light: #00aeff;
+$blue-medium:rgb(0, 136, 199);
+$blue-dark: rgb(0, 75, 110);
+$blue-darkest: rgb(0, 55, 80);
+
 
 // errors
 $error-red: $red-light;

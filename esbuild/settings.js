@@ -1,14 +1,36 @@
-import {sassPlugin} from 'esbuild-sass-plugin';
-import htmlPlugin from '@chialab/esbuild-plugin-html';
+import { sassPlugin } from 'esbuild-sass-plugin';
+import { nunjucksPlugin } from './esbuild-plugin-nunjucks.js';
+import { clean } from 'esbuild-plugin-clean';
+
 
 export function createBuildSettings(options) {
     return {
         logLevel: "info",
-        entryPoints: ['./src/main.js', './src/scss/main.scss', './src/index.html'],
+        entryPoints: [
+            './src/js/main.js',
+            './src/scss/main.scss',
+            './src/**/*.html'
+        ],
         outdir: './dist/',
         bundle: true,
         allowOverwrite: true,
-        plugins: [htmlPlugin(), sassPlugin()],
+        loader: {
+            ".html": "text",
+        },
+        plugins: [
+            clean({
+                patterns: ['./dist/*', './dist/assets/*.map.js'],
+                cleanOnStartPatterns: ['./dist/*'],
+                cleanOnEndPatterns: ['./dist/*.js', './dist/*.map']
+            }),
+            nunjucksPlugin({
+                outputDir: 'dist',
+                pageDir: './src',
+                templateDir: './src/templates',
+                dataDir: './src/templates'
+            }),
+            sassPlugin()
+        ],
         minify: true,
         sourcemap: true,
         assetNames: '[name]',

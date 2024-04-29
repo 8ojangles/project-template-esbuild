@@ -1,2 +1,7 @@
 # project-template-esbuild
-Project template using esbuild build system for speed
+==========================
+
+- JS module compilation (using `import { module } from 'path/to/module'` syntax)
+- SASS/SCSS compilation
+- Nunjucks templating
+-- Imports tested
