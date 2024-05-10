@@ -1,0 +1,11 @@
+{
+	"header": {
+		"headerText1": "We have data in a JSON file which we are importing. And hopefully watching. Still working?",
+		"nestedPartial": {
+			"textTest1": "The test text number 1 is this. Good init",
+			"textTest2": "And this is the test text number 2"
+		}
+	},
+	"bodyText1": "Now we are moving",
+	"bodyText2": "Moving far faster than before, sort of, getting there. Not yet. Another test again, and again four six times. This is so fast. FasterWorking as well?"
+}

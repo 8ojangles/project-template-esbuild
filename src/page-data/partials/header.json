@@ -1,0 +1,4 @@
+{ 
+    "headerText1": "We have data in a JSON file which we are importing. And hopefully watching. Still working?",
+    "nestedPartial": "{{nestedHeader.json}}"
+}
