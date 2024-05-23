@@ -1,0 +1,36 @@
+.aspect-ratio-handler {
+    position: relative;
+    z-index: 10;
+    aspect-ratio: $containerAspectRatio;
+    width: 100%;
+    max-width: $anim-container-width;
+}
+
+@supports not (aspect-ratio: $oneOneAspectRatio) {
+    .aspect-ratio-handler:before {
+      float: left;
+      padding-top: calc($anim-container-height / $anim-container-width * 100%);
+      content: "";
+    }
+  
+    .aspect-ratio-handler:after {
+      display: block;
+      content: "";
+      clear: both;
+    }
+}
+
+.anim-component {
+    position: relative;
+    width: 100%;
+    max-width: $anim-container-width;
+    height: 100%;
+    max-height: $anim-container-height;
+    overflow: hidden;
+}
+
+.scene {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}

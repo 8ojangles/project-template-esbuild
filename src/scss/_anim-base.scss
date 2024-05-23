@@ -1,0 +1,238 @@
+@use 'sass:list';
+
+@import 'anim-variables';
+@import 'anim-keyframes';
+@import 'anim-utils';
+@import 'anim-setup';
+
+$zLayer-1: 1;
+$zLayer-2: 2;
+$zLayer-3: 3;
+$zLayer-4: 4;
+$zLayer-5: 5;
+$zLayer-6: 6;
+$zLayer-7: 7;
+$zLayer-8: 8;
+
+
+.scene-1 {
+    opacity: 1;
+    background-color: $sky-blue;
+    // background-image: url('../assets/images/treb-anim-sprite-map.png');
+    background-size: 100%;
+    z-index: $zLayer-1;
+    // animation: fadeOut 0s $scene-1-to-scene-2 forwards;
+}
+
+.scene-1::before {
+    @include pseudoSetup();
+    z-index: $zLayer-1;
+    width: 100%;
+    height: 66%;
+    bottom: -17%;
+    left: 20%;
+    background-image: url('../assets/images/treb-anim-sprite-map.png');
+    background-position: 100% 105%;
+}
+
+.scene-1::after {
+    @include pseudoSetup();
+    z-index: $zLayer-2;
+    width: 100%;
+    height: 45%;
+    bottom: 0;
+    background-image: url('../assets/images/treb-anim-sprite-map.png');
+    background-repeat: no-repeat;
+    background-position: 1% 75%;
+    background-size: 200%;
+    border-bottom: 79px solid rgb(0, 192, 0);
+}
+
+// sprite map load for elements
+
+
+// catapult body
+.catapult {
+    width: 57%;
+    height: 41%;
+    position: absolute;
+    bottom: 22%;
+    left: 12%;
+    z-index: $zLayer-3;
+    // background-image: url('../assets/images/treb-anim-sprite-map.png');
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: 1% 84%;
+}
+
+// catapult floor shadow
+.catapult::after {
+    @include pseudoSetup();
+    width: 90%;
+    height: 17%;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .3);
+    bottom: -34%;
+    left: 5%;
+}
+
+.catapult-structure {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: $zLayer-4;
+    background-image: url('../assets/images/treb-anim-sprite-map.png');
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: 190%;
+    background-position: 25% 1%;
+    // background-color: blue;
+}
+
+.catapult-structure::before,
+.catapult-structure::after {
+    @include pseudoSetup();
+    z-index: $zLayer-5;
+    width: 21%;
+    height: 37%;
+    // background-color: red;
+    background-image: url('../assets/images/treb-anim-sprite-map.png');
+    background-repeat: no-repeat;
+    background-size: 902%;
+    background-position: 72% 0%;
+    bottom: -27%;
+}
+
+.catapult-structure::before {
+    left: 15%;
+}
+
+.catapult-structure::after {
+    right: 5%;
+}
+
+// catapult arm
+.catapult-mechanics {
+    position: absolute;
+    background-image: url('../assets/images/treb-anim-sprite-map.png');
+    // background-color: black;
+    width: 107%;
+    height: 28%;
+    top: 17%;
+    left: -4%;
+    background-size: 172%;
+    background-position: 19% 60%;
+    z-index: $z-3;
+    transform: rotate(20deg);
+    transform-origin: 68.6% 40%;
+}
+
+// transform marker
+.catapult-mechanics::after {
+    @include pseudoSetup();
+    background-color: blue;
+    width: 1%;
+    height: 200%;
+    bottom: 40%;
+    left: 2%;
+    z-index: $z-6;
+
+}
+
+// box
+.catapult-mechanics::before {
+    @include pseudoSetup();
+    background-color: red;
+    z-index: $z-2;
+    width: 17.5%;
+    height: 190%;
+    bottom: 40%;
+    left: 2%;
+}
+
+// // catapult arm
+// .catapult:before {
+//     @include pseudoSetup();
+//     background-color: green;
+//     width: 15%;
+//     height:200%;
+//     bottom: 30%;
+//     left: 60%;
+//     transform: rotateZ(-20deg);
+//     transform-origin: 50% 80%;
+//     animation: 
+//         arm-load-fire $amin-load-fire-dur $amin-load-fire-del forwards,
+//         arm-fire-spring $amin-fire-spring-dur $amin-fire-spring-del forwards;
+// }
+
+// // box
+// .catapult:after {
+//     @include pseudoSetup();
+//     background-color: $box-color;
+//     width: 30%;
+//     height:30%;
+//     bottom: 200%;
+//     left: 52%;
+//     transform: rotateZ(-20deg) translateX(0%);
+//     transform-origin: 50% 530%;
+//     animation: box-load-fire $amin-load-fire-dur $amin-load-fire-del forwards;
+// }
+
+// .scene-1 {
+//     opacity: 1;
+//     background-color: $sky-blue;
+//     animation: fadeOut 0s $scene-1-to-scene-2 forwards;
+// }
+
+// .scene-2 {
+//     opacity: 0;
+//     background-color: $sky-blue;
+//     animation: fadeIn 0s $scene-1-to-scene-2 forwards;
+// }
+
+// .scene-2::before,
+// .scene-2::after {
+//     @include pseudoSetup();
+//     background-color: white;
+//     animation-timing-function: linear;
+//     z-index: 5;
+// }
+
+// .scene-2::before {
+//     width: 40%;
+//     height: 20%;
+//     top: 30%;
+//     left: 30%;
+//     animation: slowDriftLeft1 6s linear $scene-1-to-scene-2 forwards;
+// }
+
+// .scene-2::after {
+//     width: 30%;
+//     height: 10%;
+//     top: 50%;
+//     left: 60%;
+//     animation: slowDriftLeft2 6s linear $scene-1-to-scene-2 forwards;
+// }
+
+// .box {
+//     position: absolute;
+//     width: 17%;
+//     height: 12%;
+//     top: 25%;
+//     left: 41.5%;
+//     z-index: 20;
+//     transform-origin: 50% $scene-2-box-flight-pivot;
+//     transform: rotate($scene-2-box-flight-rot-start);
+//     animation: scene2BoxFlightMain $scene-2-box-flight-dur $scene-2-box-flight-start both;
+// }
+
+// .box::after {
+//     @include pseudoSetup();
+//     background-color: $box-color;
+//     width: 100%;
+//     height:100%;
+//     transform: rotate(70deg) ;
+//     // transform: translateY(300%);
+//     animation: scene2BoxInnerRotate $scene-2-box-flight-dur linear $scene-2-box-flight-start both;
+// }

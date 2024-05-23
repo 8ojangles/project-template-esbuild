@@ -10,13 +10,22 @@
             <div class="page page--wrapper">
                 {% include "./templates/header.html" %}
                 <div class="test-container">
-                    <div>
-                        <p>{{ bodyText1 }}</p>
-                        <p>{{ bodyText2 }}</p>
+                    <div class="aspect-ratio-handler">
+                        <div class="anim-component">
+                            <div class="scene scene-1">
+                                <div class="catapult">
+                                    <div class="catapult-structure"></div>
+                                    <div class="catapult-mechanics"></div>
+                                </div>
+                            </div>
+                            {# <div class="scene scene-2">
+                                <div class="box"></div>
+                            </div> #}
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
         <script src="./js/main.js"></script>
     </body>
-</html>y
+</html>

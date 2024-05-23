@@ -8,7 +8,7 @@
 	width: 100%;
 	height: 100vh;
 	flex-direction: column;
-	@include create-color-gradient($blue-medium, $blue-darkest, 40%);
+	@include create-color-gradient($blue-dark, $blue-light, 40%);
 }
 
 .page--header {
@@ -85,9 +85,11 @@
 }
 
 .test-container {
+	width: 60%;
+	height: 70%;
 	padding: 100px;
-	background-color: rgba(255, 255, 255, 0.1);
-	border-radius: 100px;
+	background-color: rgba(255, 255, 255, 0.4);
+	border-radius: 5px;
 	@include flex-centered-children();
 
 	p {
