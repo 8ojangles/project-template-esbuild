@@ -1,0 +1,9 @@
+@mixin absolutePos() {
+    position: absolute;
+}
+
+@mixin pseudoSetup() {
+    position: absolute;
+    display: block;
+    content: "";
+}

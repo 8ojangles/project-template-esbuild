@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @mixin bg-hilite() {
 	background-color: rgba( 255, 0, 0, 0.2 );
 }
@@ -42,4 +44,15 @@ $dark-gradient-init-opacity: 0.4;
 @mixin margin-centered() {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+/// Remove the unit of a length
+/// @param {Number} $number - Number to remove unit from
+/// @return {Number} - Unitless number
+@function strip-unit($number) {
+	@if type-of($number) == 'number' and not unitless($number) {
+		@return math.div($number, $number * 0 + 1);
+	}
+
+    @return $number;
 }

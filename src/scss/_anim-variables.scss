@@ -1,0 +1,41 @@
+$anim-container-width: 500px;
+$anim-container-height: 400px;
+
+/// Required until sasslint accepts aspect ratio "slash" properties
+$containerAspectRatio: list.slash(strip-unit($anim-container-width), strip-unit($anim-container-height));
+$oneOneAspectRatio: list.slash(1, 1);
+
+/// anim vars
+$sky-blue: rgba(135, 206, 235, 1);
+$box-color: rgb(255, 115, 0);
+
+$box-rotate-timing-curve: cubic-bezier(.25,.8,.75,.25);
+
+$arm-rotate-end-keyframe: 85%;
+$arm-fire-keyframe: 93%;
+
+$box-launch-start-keyframe: 95%;
+
+$amin-load-fire-dur: 1.5s;
+$amin-load-fire-del: 0s;
+
+$amin-fire-spring-dur: 0.5s;
+$amin-fire-spring-del: $amin-load-fire-dur + $amin-load-fire-del;
+
+$box-fire-X-result: 560%;
+
+$scene-1-to-scene-2: $amin-load-fire-dur * 1.5;
+$scene-2-box-flight-start: $scene-1-to-scene-2 + 0.5s;
+
+$scene-2-box-flight-dur: 1s;
+
+$scene-2-box-flight-pivot: 1400%;
+$scene-2-box-flight-rot-start: -30deg;
+$scene-2-box-flight-rot-end: 30deg;
+
+$scene-2-box-flight-y-start: 500%;
+$scene-2-box-flight-y-end: -500%;
+
+$scene-2-box-flight-rotZ-start: -30deg;
+$scene-2-box-flight-rotZ-end: 275deg;
+$scene-2-box-flight-rotZ-mid: 120deg;

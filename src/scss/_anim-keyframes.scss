@@ -1,0 +1,119 @@
+@keyframes fadeIn {
+    0% { opacity: 0 };
+    100% { opacity: 1 };
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1 };
+    100% { opacity: 0 };
+}
+
+@keyframes arm-load-fire {
+    0% {
+        transform: rotateZ(-20deg);
+    }
+    20% {
+        animation-timing-function: ease-in-out;
+        transform: rotateZ(-20deg);
+    }
+    #{$arm-rotate-end-keyframe} {
+        transform: rotateZ(-75deg);
+    }
+    #{$arm-fire-keyframe} {
+        animation-timing-function: ease-in;
+        transform: rotateZ(-75deg);
+    }
+    100% {
+        transform: rotateZ(10deg);
+    }
+}
+
+@keyframes box-load-fire {
+    0% {
+        transform: rotateZ(-20deg) translateX(0%);
+    }
+    20% {
+        animation-timing-function: ease-in-out;
+        transform: rotateZ(-20deg) translateX(0%);
+    }
+    #{$arm-rotate-end-keyframe} {
+        transform: rotateZ(-75deg) translateX(0%);
+    }
+    #{$arm-fire-keyframe} {
+        animation-timing-function: ease-in;
+        transform: rotateZ(-75deg) translateX(0%);
+    }
+    #{$box-launch-start-keyframe} {
+        animation-timing-function: linear;
+        transform: rotateZ(-10deg) translateX(0%);
+    }
+    100% {
+        transform: rotateZ(-10deg) translateX($box-fire-X-result);
+    }
+}
+
+@keyframes arm-fire-spring {
+    0% {
+        transform: rotateZ(10deg);
+    }
+    10% {
+        transform: rotateZ(0deg);
+    }
+    20% {
+        transform: rotateZ(9deg);
+    }
+    30% {
+        transform: rotateZ(1deg);
+    }
+    40% {
+        transform: rotateZ(7deg);
+    }
+    50% {
+        transform: rotateZ(2deg);
+    }
+    60% {
+        transform: rotateZ(6deg);
+    }
+    70% {
+        transform: rotateZ(3deg);
+    }
+    80% {
+        transform: rotateZ(5deg);
+    }
+    90% {
+        transform: rotateZ(4deg);
+    }
+    100% {
+        transform: rotateZ(5deg);
+    }
+}
+
+@keyframes slowDriftLeft1 {
+    0% { transform: translateX(20%); };
+    100% { transform: translateX(-30%); };
+}
+
+@keyframes slowDriftLeft2 {
+    0% { transform: translateX(40%); };
+    100% { transform: translateX(-60%); };
+}
+
+@keyframes scene2BoxFlightMain {
+    0% {
+        animation-timing-function: $box-rotate-timing-curve;
+        transform: rotate($scene-2-box-flight-rot-start);
+    }
+    100% {
+        transform: rotate($scene-2-box-flight-rot-end);
+    }
+}
+
+@keyframes scene2BoxInnerRotate {
+    0% {
+        animation-timing-function: $box-rotate-timing-curve;
+        transform: rotate(70deg);
+    }
+    100% {
+        transform: rotate(120deg);
+    }
+}
