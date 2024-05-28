@@ -6,6 +6,7 @@ import {
     checkFile,
     isDirectory
 } from './utils.js';
+import { RESULTTYPE, defaultIncludeFiles } from './config.js';
 
 // options:
 /**
@@ -67,17 +68,6 @@ const jsonbakePlugin = (opts) => ({
                 return;
             }
 
-            var RESULTTYPE = {
-                STRING: "string",
-                JSON: "json"
-            };
-
-            var defaultIncludeFiles = {
-                json: { resultType: RESULTTYPE.JSON},
-                html: { resultType: RESULTTYPE.STRING, separator: ""  },
-                csv: { resultType: RESULTTYPE.STRING, separator: ";"  }
-            };
-
             // Merge user and default includeFiles
             // won't be needed in Grunt 0.5.0: https://github.com/gruntjs/grunt/issues/738
 
@@ -86,9 +76,9 @@ const jsonbakePlugin = (opts) => ({
 
             } else {
                 Object.keys( defaultIncludeFiles ).forEach( function( defaultFileExtension ) {
-                    var optionsFileExtObj = options.includeFiles[ defaultFileExtension ];
+                    const optionsFileExtObj = options.includeFiles[ defaultFileExtension ];
                     if ( optionsFileExtObj ) {
-                        var defFileExtObj = defaultIncludeFiles[ defaultFileExtension ];
+                        const defFileExtObj = defaultIncludeFiles[ defaultFileExtension ];
                         Object.keys( defFileExtObj ).forEach( function( defaultFileExtensionObjectKey ) {
                             if ( ! optionsFileExtObj[ defaultFileExtensionObjectKey ] ) {
                                 optionsFileExtObj[ defaultFileExtensionObjectKey ] = defaultIncludeFiles[ defaultFileExtension ][ defaultFileExtensionObjectKey ];
@@ -164,11 +154,11 @@ const jsonbakePlugin = (opts) => ({
                         value = replaceVariables( value );
                     }
 
-                    var match = ( typeof value === "string" ) ? value.match( options.parsePattern ) : null;
+                    const match = ( typeof value === "string" ) ? value.match( options.parsePattern ) : null;
 
                     if ( match ) {
-                        var folderPath = getFolder( path ) || ".";
-                        var fullPath = folderPath + "/" + match[ 1 ];
+                        const folderPath = getFolder( path ) || ".";
+                        const fullPath = folderPath + "/" + match[ 1 ];
 
                         return isDirectory( fullPath ) ? parseDirectory( fullPath ) : parseFile( fullPath );
                     }
@@ -201,7 +191,7 @@ const jsonbakePlugin = (opts) => ({
             function parseDirectory( path ) {
                 return fs.readdirSync( path )
                     .map( function( file ) {
-                        var filePath = path + "/" + file;
+                        const filePath = path + "/" + file;
                         if ( isIncludeFile( filePath ) ) return parseFile( filePath );
                         else if ( isDirectory( filePath ) ) return parseDirectory( filePath );
                         return null;
@@ -214,12 +204,12 @@ const jsonbakePlugin = (opts) => ({
             // Loop over all files given in config and parse them
             files.forEach( function( file ) {
 
-                var src = file.src;
-                var dest = file.dest;
+                const src = file.src;
+                const dest = file.dest;
 
                 if ( ! checkFile( src ) ) return;
 
-                var destContent = JSON.stringify( parseFile( src ), null, options.indentation );
+                const destContent = JSON.stringify( parseFile( src ), null, options.indentation );
 
                 fs.writeFile(dest, destContent, err => {
                     if (err) {
